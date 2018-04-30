@@ -15,8 +15,8 @@ Platform:
 
 npm manifest: 
   {
-  	"name": "angular-seed",
-  	"description": "An initial yarn-managed project for Chapter 2",
+  	"name": "auction",
+  	"description": "Sample Online Auction",
   	"private": true,
   	"scripts": {
   		"start": "live-server"
@@ -30,10 +30,12 @@ npm manifest:
   		"@angular/platform-browser": "^4.1.0",
   		"@angular/platform-browser-dynamic": "^4.1.0",
   		"@angular/router": "^4.1.0",
+  		"bootstrap": "^3.3.7",
   		"core-js": "^2.4.1",
+  		"jquery": "^3.3.1",
   		"rxjs": "5.3.0",
   		"systemjs": "0.19.47",
-  		"zone.js": "0.8.5"
+  		"zone.js": "^0.8.5"
   	},
   	"devDependencies": {
   		"live-server": "1.2.0",
@@ -50,20 +52,20 @@ Lockfile:
   
   
   "@angular/common@^4.1.0":
-    version "4.4.7"
-    resolved "https://registry.yarnpkg.com/@angular/common/-/common-4.4.7.tgz#c2fd3e68a05f661c3d2a040fdad00af4119bb852"
+    version "4.4.6"
+    resolved "https://registry.yarnpkg.com/@angular/common/-/common-4.4.6.tgz#4b81420724e0828a0e839b95a55eb1a7e83918f2"
     dependencies:
       tslib "^1.7.1"
   
   "@angular/compiler@^4.1.0":
-    version "4.4.7"
-    resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-4.4.7.tgz#c90b0a8d450e1ea19a5a60309ca03b0925a2f269"
+    version "4.4.6"
+    resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-4.4.6.tgz#2ee1faf25b757e1d128979074be7fae529b3bc20"
     dependencies:
       tslib "^1.7.1"
   
   "@angular/core@^4.1.0":
-    version "4.4.7"
-    resolved "https://registry.yarnpkg.com/@angular/core/-/core-4.4.7.tgz#18bdc17bec7bdccb6424402fc90550e15a6d221b"
+    version "4.4.6"
+    resolved "https://registry.yarnpkg.com/@angular/core/-/core-4.4.6.tgz#13031fd10dcfe438875419b38f21120958bc2354"
     dependencies:
       tslib "^1.7.1"
   
@@ -74,26 +76,26 @@ Lockfile:
       tslib "^1.7.1"
   
   "@angular/http@^4.1.0":
-    version "4.4.7"
-    resolved "https://registry.yarnpkg.com/@angular/http/-/http-4.4.7.tgz#8fab2eb121cda38ad9c568e5268f7d69ab8b904e"
+    version "4.4.6"
+    resolved "https://registry.yarnpkg.com/@angular/http/-/http-4.4.6.tgz#0af680c6710bdc026d940e225cfd0f6a5c005d0c"
     dependencies:
       tslib "^1.7.1"
   
   "@angular/platform-browser-dynamic@^4.1.0":
-    version "4.4.7"
-    resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-4.4.7.tgz#c10676f49de5ac604e326cba440ff6a6af6588fe"
+    version "4.4.6"
+    resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-4.4.6.tgz#4d3d9a6a7bf2cf3de4058a615ae059eff641fa36"
     dependencies:
       tslib "^1.7.1"
   
   "@angular/platform-browser@^4.1.0":
-    version "4.4.7"
-    resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-4.4.7.tgz#76d5af9438d6a349ea0b5fe97bd8fbe1fdc216a9"
+    version "4.4.6"
+    resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-4.4.6.tgz#a9839c547e1b654fa1d24a89780c8ba6ab8dcce0"
     dependencies:
       tslib "^1.7.1"
   
   "@angular/router@^4.1.0":
-    version "4.4.7"
-    resolved "https://registry.yarnpkg.com/@angular/router/-/router-4.4.7.tgz#b642ae00f5f93f5e864f3d2b3e735509cd814c05"
+    version "4.4.6"
+    resolved "https://registry.yarnpkg.com/@angular/router/-/router-4.4.6.tgz#0f6ad29ae0ff8d2c9ea379bd320447217b7ec866"
     dependencies:
       tslib "^1.7.1"
   
@@ -186,8 +188,8 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/aws-sign2/-/aws-sign2-0.6.0.tgz#14342dd38dbcc94d0e5b87d763cd63612c0e794f"
   
   aws4@^1.2.1:
-    version "1.7.0"
-    resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.7.0.tgz#d4d0e9b9dbfca77bf08eeb0a8a471550fe39e289"
+    version "1.6.0"
+    resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.6.0.tgz#83ef5ca860b2b32e4a0deedee8c771b9db57471e"
   
   balanced-match@^1.0.0:
     version "1.0.0"
@@ -228,6 +230,10 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/boom/-/boom-2.10.1.tgz#39c8918ceff5799f83f9492a848f625add0c766f"
     dependencies:
       hoek "2.x.x"
+  
+  bootstrap@^3.3.7:
+    version "3.3.7"
+    resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-3.3.7.tgz#5a389394549f23330875a3b150656574f8a9eb71"
   
   brace-expansion@^1.1.7:
     version "1.1.11"
@@ -299,8 +305,8 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/console-control-strings/-/console-control-strings-1.1.0.tgz#3d7cf4464db6446ea644bf4b39507f9851008e8e"
   
   core-js@^2.4.1:
-    version "2.5.5"
-    resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.5.5.tgz#b14dde936c640c0579a6b50cabcc132dd6127e3b"
+    version "2.5.3"
+    resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.5.3.tgz#8acc38345824f16d8365b7c9b4259168e8ed603e"
   
   core-util-is@1.0.2, core-util-is@~1.0.0:
     version "1.0.2"
@@ -348,6 +354,10 @@ Lockfile:
   delegates@^1.0.0:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/delegates/-/delegates-1.0.0.tgz#84c6e159b81904fdca59a0ef44cd870d31250f9a"
+  
+  depd@1.1.1:
+    version "1.1.1"
+    resolved "https://registry.yarnpkg.com/depd/-/depd-1.1.1.tgz#5783b4e1c459f06fa5ca27f991f3d06e7a310359"
   
   depd@~1.1.1, depd@~1.1.2:
     version "1.1.2"
@@ -602,13 +612,13 @@ Lockfile:
       uuid "^3.0.0"
   
   http-errors@~1.6.2:
-    version "1.6.3"
-    resolved "https://registry.yarnpkg.com/http-errors/-/http-errors-1.6.3.tgz#8b55680bb4be283a0b5bf4ea2e38580be1d9320d"
+    version "1.6.2"
+    resolved "https://registry.yarnpkg.com/http-errors/-/http-errors-1.6.2.tgz#0a002cc85707192a7e7946ceedc11155f60ec736"
     dependencies:
-      depd "~1.1.2"
+      depd "1.1.1"
       inherits "2.0.3"
-      setprototypeof "1.1.0"
-      statuses ">= 1.4.0 < 2"
+      setprototypeof "1.0.3"
+      statuses ">= 1.3.1 < 2"
   
   http-parser-js@>=0.4.0:
     version "0.4.11"
@@ -718,6 +728,10 @@ Lockfile:
   isstream@~0.1.2:
     version "0.1.2"
     resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
+  
+  jquery@^3.3.1:
+    version "3.3.1"
+    resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
   
   jsbn@~0.1.0:
     version "0.1.1"
@@ -1024,15 +1038,15 @@ Lockfile:
       strip-json-comments "~2.0.1"
   
   readable-stream@^2.0.2, readable-stream@^2.0.6, readable-stream@^2.1.4:
-    version "2.3.6"
-    resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.3.6.tgz#b11c27d88b8ff1fbe070643cf94b0c79ae1b0aaf"
+    version "2.3.5"
+    resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.3.5.tgz#b4f85003a938cbb6ecbce2a124fb1012bd1a838d"
     dependencies:
       core-util-is "~1.0.0"
       inherits "~2.0.3"
       isarray "~1.0.0"
       process-nextick-args "~2.0.0"
       safe-buffer "~5.1.1"
-      string_decoder "~1.1.1"
+      string_decoder "~1.0.3"
       util-deprecate "~1.0.1"
   
   readdirp@^2.0.0:
@@ -1147,9 +1161,9 @@ Lockfile:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/set-immediate-shim/-/set-immediate-shim-1.0.1.tgz#4b2b1b27eb808a9f8dcc481a58e5e56f599f3f61"
   
-  setprototypeof@1.1.0:
-    version "1.1.0"
-    resolved "https://registry.yarnpkg.com/setprototypeof/-/setprototypeof-1.1.0.tgz#d0bd85536887b6fe7c0d818cb962d9d91c54e656"
+  setprototypeof@1.0.3:
+    version "1.0.3"
+    resolved "https://registry.yarnpkg.com/setprototypeof/-/setprototypeof-1.0.3.tgz#66567e37043eeb4f04d91bd658c0cbefb55b8e04"
   
   signal-exit@^3.0.0:
     version "3.0.2"
@@ -1181,17 +1195,13 @@ Lockfile:
       jsbn "~0.1.0"
       tweetnacl "~0.14.0"
   
-  "statuses@>= 1.4.0 < 2":
-    version "1.5.0"
-    resolved "https://registry.yarnpkg.com/statuses/-/statuses-1.5.0.tgz#161c7dac177659fd9811f43771fa99381478628c"
+  "statuses@>= 1.3.1 < 2", statuses@~1.4.0:
+    version "1.4.0"
+    resolved "https://registry.yarnpkg.com/statuses/-/statuses-1.4.0.tgz#bb73d446da2796106efcc1b601a253d6c46bd087"
   
   statuses@~1.3.1:
     version "1.3.1"
     resolved "https://registry.yarnpkg.com/statuses/-/statuses-1.3.1.tgz#faf51b9eb74aaef3b3acf4ad5f61abf24cb7b93e"
-  
-  statuses@~1.4.0:
-    version "1.4.0"
-    resolved "https://registry.yarnpkg.com/statuses/-/statuses-1.4.0.tgz#bb73d446da2796106efcc1b601a253d6c46bd087"
   
   stream-combiner@~0.0.4:
     version "0.0.4"
@@ -1207,9 +1217,9 @@ Lockfile:
       is-fullwidth-code-point "^1.0.0"
       strip-ansi "^3.0.0"
   
-  string_decoder@~1.1.1:
-    version "1.1.1"
-    resolved "https://registry.yarnpkg.com/string_decoder/-/string_decoder-1.1.1.tgz#9cf1611ba62685d7030ae9e4ba34149c3af03fc8"
+  string_decoder@~1.0.3:
+    version "1.0.3"
+    resolved "https://registry.yarnpkg.com/string_decoder/-/string_decoder-1.0.3.tgz#0fc67d7c141825de94282dd536bec6b9bce860ab"
     dependencies:
       safe-buffer "~5.1.0"
   
@@ -1283,8 +1293,8 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
   
   typescript@^2.3.3:
-    version "2.8.1"
-    resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.8.1.tgz#6160e4f8f195d5ba81d4876f9c0cc1fbc0820624"
+    version "2.7.2"
+    resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.7.2.tgz#2d615a1ef4aee4f574425cdff7026edf81919836"
   
   uid-number@^0.0.6:
     version "0.0.6"
@@ -1347,16 +1357,16 @@ Lockfile:
     version "1.0.2"
     resolved "https://registry.yarnpkg.com/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
   
-  zone.js@0.8.5:
-    version "0.8.5"
-    resolved "https://registry.yarnpkg.com/zone.js/-/zone.js-0.8.5.tgz#7906e017482cbff4c3f079c5c34305ce941f5ba2"
+  zone.js@^0.8.5:
+    version "0.8.25"
+    resolved "https://registry.yarnpkg.com/zone.js/-/zone.js-0.8.25.tgz#e20e5e85b881e2e66352612b5f238e8309e5badd"
 
 Trace: 
   Error: Command failed.
   Exit code: 3221225786
   Command: C:\WINDOWS\system32\cmd.exe
   Arguments: /d /s /c live-server
-  Directory: C:\dev\angular\AWTD\chapter05\bindings_and_events
+  Directory: C:\dev\angular\AWTD\auction
   Output:
   
       at ProcessTermError.MessageError (C:\Program Files (x86)\Yarn\lib\cli.js:186:110)

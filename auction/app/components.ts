@@ -18,5 +18,5 @@ export const myComponents = [
     ProductDetailComponent,
     ProductItemComponent,
     SearchComponent,
-    StarsComponent
+    StarsComponent,
 ];
