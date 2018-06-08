@@ -18,6 +18,11 @@ System.config({
         '@angular/forms' : { main : 'bundles/forms.umd.min.js' },
         '@angular/platform-browser' : { main : 'bundles/platform-browser.umd.min.js' },
         '@angular/platform-browser-dynamic' : { main : 'bundles/platform-browser-dynamic.umd.min.js' },
-        'app' : { main : 'input_output/output-property-binding', defaultExtension : 'ts' }
+        'app' : { main : 'comp_lifecycle/ng-changes-with-param', defaultExtension : 'ts' }
+    },
+    meta : {
+        'app/mediator/stock.ts' : {
+            format : 'es6'
+        }
     }
 });
