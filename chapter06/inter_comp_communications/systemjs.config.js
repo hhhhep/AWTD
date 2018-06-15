@@ -18,7 +18,7 @@ System.config({
         '@angular/forms' : { main : 'bundles/forms.umd.min.js' },
         '@angular/platform-browser' : { main : 'bundles/platform-browser.umd.min.js' },
         '@angular/platform-browser-dynamic' : { main : 'bundles/platform-browser-dynamic.umd.min.js' },
-        'app' : { main : 'comp_lifecycle/ng-changes-with-param', defaultExtension : 'ts' }
+        'app' : { main : 'child_api/exposing-child-api', defaultExtension : 'ts' }
     },
     meta : {
         'app/mediator/stock.ts' : {
