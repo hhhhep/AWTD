@@ -19,10 +19,5 @@ System.config({
         '@angular/platform-browser' : { main : 'bundles/platform-browser.umd.min.js' },
         '@angular/platform-browser-dynamic' : { main : 'bundles/platform-browser-dynamic.umd.min.js' },
         'app' : { main : 'template-driven', defaultExtension : 'ts' }
-    },
-    meta : {
-        'app/mediator/stock.ts' : {
-            format : 'es6'
-        }
     }
 });
