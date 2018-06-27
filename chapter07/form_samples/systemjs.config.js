@@ -18,6 +18,6 @@ System.config({
         '@angular/forms' : { main : 'bundles/forms.umd.min.js' },
         '@angular/platform-browser' : { main : 'bundles/platform-browser.umd.min.js' },
         '@angular/platform-browser-dynamic' : { main : 'bundles/platform-browser-dynamic.umd.min.js' },
-        'app' : { main : 'growable-items-form', defaultExtension : 'ts' }
+        'app' : { main : 'reactive', defaultExtension : 'ts' }
     }
 });
