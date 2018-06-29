@@ -18,6 +18,6 @@ System.config({
         '@angular/forms' : { main : 'bundles/forms.umd.min.js' },
         '@angular/platform-browser' : { main : 'bundles/platform-browser.umd.min.js' },
         '@angular/platform-browser-dynamic' : { main : 'bundles/platform-browser-dynamic.umd.min.js' },
-        'app' : { main : 'form-builder', defaultExtension : 'ts' }
+        'app' : { main : 'custom-validator-error-message', defaultExtension : 'ts' }
     }
 });
