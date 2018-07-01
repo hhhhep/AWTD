@@ -11,7 +11,11 @@ function ssnValidator(control : FormControl) : { [key : string] : any } {
 
 @Directive({
     selector : '[ssn]',
-    providers : [{ provide : NG_VALIDATORS, useValue : ssnValidator, multi : true }]
+    providers : [{
+        provide : NG_VALIDATORS,
+        useValue : ssnValidator,
+        multi : true
+    }]
 })
 class SsnValidatorDirective {}
 
