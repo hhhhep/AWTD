@@ -1,13 +1,20 @@
-<form [formGroup]="formModel">
-    <div class="form-group">
+<form [formGroup]="formModel" (ngSubmit)="onSearch()" novalidate>
+    <div class="form-group"
+        [class.has-error]="formModel.hasError('minlength', 'title')">
         <label for="title">Product title :</label>
         <input id="title"
             placeholder="Title"
             class="form-control"
             type="text"
-            formControlName="title">
+            formControlName="title"
+            minlength="3">
+        <span class="help-block"
+            [class.hidden]="!formModel.hasError('minlength', 'title')">
+            Type at least 3 characters
+        </span>
     </div>
-    <div class="form-group">
+    <div class="form-group"
+        [class.has-error]="formModel.hasError('positivenumber', 'price')">
         <label for="price">Product price :</label>
         <input type="number"
             id="price"
@@ -16,11 +23,18 @@
             step="any"
             min="0"
             formControlName="price">
+        <span class="help-block"
+            [class.hidden]="!formModel.hasError('positivenumber', 'price')">
+            Price is not positive number
+        </span>
     </div>
     <div class="form-group">
         <label for="category">Product category :</label>
-        <select id="category" class="form-control"
+        <select id="category"
+            class="form-control"
             formControlName="category">
+            <option value="-1">All categories</option>
+            <option *ngFor="let c of categories" [value]="c">{{ c }}</option>
         </select>
     </div>
     <div class="form-group">
