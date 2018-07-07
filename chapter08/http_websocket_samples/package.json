@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@types/express": "^4.16.0",
-    "@types/node": "^10.5.1",
+    "@types/node": "^10.5.2",
     "nodemon": "^1.17.5"
   },
   "scripts": {
