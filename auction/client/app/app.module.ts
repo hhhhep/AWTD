@@ -18,7 +18,7 @@ import { myComponents } from './components';
 import { FilterPipe } from './components/pipes/filter.pipe';
 
 @NgModule({
-    imports : [BrowserModule, FormsModule, ReactiveFormsModule,
+    imports : [BrowserModule, FormsModule, ReactiveFormsModule, HttpModule,
         RouterModule.forRoot([
             { path : '', component : HomeComponent },
             { path : 'products/:productId', component : ProductDetailComponent }

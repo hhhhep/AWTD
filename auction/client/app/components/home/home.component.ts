@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Product, ProductService } from '../../services/product.service';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/debounceTime';
 
 @Component({
@@ -22,6 +23,10 @@ import 'rxjs/add/operator/debounceTime';
             </div>
         </div>
         <div class="row">
+            <div *ngFor="let product of products | async" class="col-sm-4 col-lg-4 col-md-4">
+                <auction-product-item [product]="product"></auction-product-item>
+            </div>
+
             <div *ngFor="let product of products | filter : 'title' : filterCriteria" class="col-sm-4 col-lg-4 col-md-4">
                 <auction-product-item [product]="product"></auction-product-item>
             </div>
@@ -29,17 +34,19 @@ import 'rxjs/add/operator/debounceTime';
     `
 })
 export default class HomeComponent {
-    products : Product[] = [];
+
+    products : Observable<Product[]>;
     titleFilter : FormControl = new FormControl();
     filterCriteria : string;
 
     constructor(private productService : ProductService) {
         this.products = this.productService.getProducts();
-        this.titleFilter.valueChanges
-            .debounceTime(100)
+
+        this.productService.searchEvent
             .subscribe(
-                value => this.filterCriteria = value,
-                error => console.error(error)
+                params => this.products = this.productService.search(params),
+                err => console.log("Can't get products. Error code: %s, URL: %s "),
+                () => console.log('DONE')
             );
     }
 }

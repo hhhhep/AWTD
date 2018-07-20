@@ -21,13 +21,13 @@ export default class SearchComponent {
             'category' : [-1]
         });
     }
-
+ 
     onSearch() {
         if (this.formModel.valid) {
-            console.log(this.formModel.value);
+            this.productService.searchEvent.emit(this.formModel.value);
         }
     }
-    
+
 }
 
 function positiveNumberValidator(control : FormControl) : any {
