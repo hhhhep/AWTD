@@ -26,10 +26,6 @@ import 'rxjs/add/operator/debounceTime';
             <div *ngFor="let product of products | async" class="col-sm-4 col-lg-4 col-md-4">
                 <auction-product-item [product]="product"></auction-product-item>
             </div>
-
-            <div *ngFor="let product of products | filter : 'title' : filterCriteria" class="col-sm-4 col-lg-4 col-md-4">
-                <auction-product-item [product]="product"></auction-product-item>
-            </div>
         </div>
     `
 })

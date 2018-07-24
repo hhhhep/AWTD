@@ -4,7 +4,6 @@ import { ProductService } from '../../services/product.service';
 
 @Component({
     selector : 'auction-search',
-    providers : [ProductService],
     templateUrl : 'app/components/search/search.component.html'
 })
 export default class SearchComponent {

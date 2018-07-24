@@ -9,6 +9,7 @@ import StarsComponent from '../stars/stars.component';
     templateUrl : 'app/components/product-detail/product-detail.component.html',
     directives : [StarsComponent]
 })
+
 export default class ProductDetailComponent {
     product : Product;
     reviews : Review[];
@@ -18,10 +19,26 @@ export default class ProductDetailComponent {
 
     isReviewHidden : boolean = true;
     
-    constructor (route : ActivatedRoute, productService : ProductService) {
-        let prodId : number = parseInt(route.snapshot.params['productId']);
-        this.product = productService.getProductById(prodId);
-        this.reviews = productService.getReviewsForProduct(this.product.id);
+    constructor (route : ActivatedRoute,
+        productService : ProductService) {
+
+        let productId : number = parseInt(route.snapshot.params['productId']);
+        
+        productService
+            .getProductById(productId)
+            .subscribe(
+                product => {
+                    this.product = product;
+                },
+                error => console.error(error)
+            );
+
+        productService
+            .getReviewsForProduct(productId)
+            .subscribe(
+                reviews => this.reviews = reviews,
+                error => console.error(error)
+            );
     }
 
     addReview() {
