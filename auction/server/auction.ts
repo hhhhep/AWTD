@@ -1,5 +1,7 @@
 import * as express from 'express';
 import * as path from 'path';
+import { Server as HttpServer } from 'http';
+import { Server as WsServer } from 'ws';
 import { getProducts, getProductById, getReviewsByProductId } from './model';
 
 const app = express();
@@ -19,7 +21,56 @@ app.get('/products/:productId/reviews', (req, res) => {
     res.json(getReviewsByProductId(parseInt(req.params.productId)));
 });
 
-const httpServer = app.listen(8000, 'localhost', () => {
+const httpServer : HttpServer = app.listen(8000, 'localhost', () => {
     const { port } = httpServer.address();
     console.log('HTTP Server is listening on %s', port);
 });
+
+const wsServer : WsServer = new WsServer({ server : httpServer });
+
+wsServer.on('connection', ws => {
+    ws.on('message', message => {
+        let subscriptionRequest = JSON.parse(message);
+        subscribeToProductBids(ws, subscriptionRequest.productId);
+    })
+});
+
+const subscriptions = new Map<any, number[]>();
+
+function subscribeToProductBids(client, productId : number) : void {
+    let products = subscriptions.get(client) || [];
+    subscriptions.set(client, [...products, productId]);
+}
+
+setInterval(() => {
+    generateNewBids();
+    broadcastNewBidsToSubscribers();
+}, 2000);
+
+const currentBids = new Map<number, number>();
+
+function generateNewBids() {
+    getProducts().forEach(p => {
+        const currentBid = currentBids.get(p.id) || p.price;
+        const newBid = random(currentBid, currentBid + 5);
+        currentBids.set(p.id, newBid);
+    });
+}
+
+function broadcastNewBidsToSubscribers() {
+    subscriptions.forEach((products : number[], ws : WebSocket) => {
+        if (ws.readyState === 1) {
+            let newBids = products.map(pid => ({
+                productId : pid,
+                bid : currentBids.get(pid)
+            }));
+            ws.send(JSON.stringify(newBids));
+        } else {
+            subscriptions.delete(ws);
+        }
+    });
+}
+
+function random(low : number, high : number) : number {
+    return Math.random() * (high - low) + low;
+}
