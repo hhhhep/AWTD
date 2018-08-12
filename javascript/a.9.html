@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        function getStock() {
+            return {
+                symbol : 'IBM',
+                price : 100.00
+            };
+        }
+
+        let { symbol : sym, price, stockExchange = "NASDAQ" } = getStock();
+        console.log(`The price of ${sym} is ${price} ${stockExchange}`);
+    </script>
+</body>
+</html>

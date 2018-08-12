@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        class Tax {
+            constructor(income) {
+                this.income = income;
+            }
+        }
+
+        class NJTax extends Tax {
+
+        }
+
+        var njTax = new NJTax(50000);
+        console.log(`The income in njTax instance is ${njTax.income}`);
+    </script>
+</body>
+</html>
