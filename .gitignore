@@ -1,3 +1,4 @@
 auction/node_modules/
 chapter05/bindings_and_events/node_modules/
 **/node_modules/**
+.idea/
