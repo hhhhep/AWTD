@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        function getCustomers() {
+            return new Promise(
+                function(resolve, reject) {
+                    console.log('Getting customers');
+
+                    setTimeout(function() {
+                        var success = true;
+                        if (success) {
+                            resolve('John Smith');
+                        } else {
+                            reject("Can't get customers");
+                        }
+                    }, 1000);
+                }
+            );
+        }
+
+        let promise = getCustomers()
+            .then((cust) => console.log(cust))
+            .catch((err) => console.log(err));
+        console.log('Invoke getCustomers. Waiting for results');
+    </script>
+</body>
+</html>
