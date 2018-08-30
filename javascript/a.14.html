@@ -47,6 +47,8 @@
             .then((order) => console.log(order))
             .catch((err) => console.log(err));
 
+        // Promise.all([getCustomers(), getOrders()])
+        //     .then((order) => console.log(order));
 
         console.log('Chained getCustomers and getOrders. Waiting for results');
     </script>
