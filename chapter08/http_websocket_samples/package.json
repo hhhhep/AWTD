@@ -9,6 +9,11 @@
   },
   "devDependencies": {
     "@types/express": "^4.16.0",
-    "@types/node": "^10.11.0"
+    "@types/node": "^10.11.0",
+    "nodemon": "^1.18.4"
+  },
+  "scripts": {
+    "start": "node build/my-express-server.js",
+    "dev": "nodemon build/my-express-server.js"
   }
 }
