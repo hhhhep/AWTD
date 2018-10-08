@@ -18,6 +18,6 @@ System.config({
         '@angular/http' : { main : 'bundles/http.umd.min.js' },
         '@angular/platform-browser' : { main : 'bundles/platform-browser.umd.min.js' },
         '@angular/platform-browser-dynamic' : { main : 'bundles/platform-browser-dynamic.umd.min.js' },
-        'app' : { main : 'main', defaultExtension : 'ts' }
+        'app' : { main : 'main-asyncpipe', defaultExtension : 'ts' }
     }
 });
