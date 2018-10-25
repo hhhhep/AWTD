@@ -4,7 +4,6 @@ import { ProductService } from '../../services/product.service';
 
 @Component({
     selector : 'auction-search',
-    providers : [ProductService],
     templateUrl : 'app/components/search/search.component.html'
 })
 export default class SearchComponent {
@@ -21,13 +20,12 @@ export default class SearchComponent {
             'category' : [-1]
         });
     }
-
+    
     onSearch() {
         if (this.formModel.valid) {
-            console.log(this.formModel.value);
+            this.productService.searchEvent.emit(this.formModel.value);
         }
     }
-    
 }
 
 function positiveNumberValidator(control : FormControl) : any {

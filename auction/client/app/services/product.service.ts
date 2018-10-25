@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { Http, URLSearchParams } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -31,6 +31,7 @@ export interface ProductSearchParams {
 
 @Injectable()
 export class ProductService {
+    searchEvent : EventEmitter = new EventEmitter();
 
     constructor(private http : Http) {}
 
