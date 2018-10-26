@@ -14,13 +14,27 @@ export class Review {
                 public timestamp : string,
                 public user : string,
                 public rating : number,
-                public comment : string) {            
+                public comment : string) {
     }
 }
 
 export function getProducts(params = <any>{}) : Product[] {
-    let results = products;
-    return results;
+    let result = products;
+
+    if (params.title) {
+        result = result.filter(
+            p => p.title.toLowerCase().indexOf(params.title.toLowerCase()) !== -1);
+    }
+    if (parseInt(params.price) && result.length >  0) {
+        result = result.filter(
+            p => p.price <= parseInt(params.price));
+    }
+    if (params.category && result.length > 0) {
+        result = result.filter(
+            p => p.categories.indexOf(params.category.toLowerCase()) !== -1);
+    }
+
+    return result;
 }
 
 export function getProductById(productId : number) : Product {
