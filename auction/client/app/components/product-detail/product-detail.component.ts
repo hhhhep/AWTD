@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product, Review, ProductService } from '../../services/product.service';
+import { BidService } from '../../services/bid.service';
 import StarsComponent from '../stars/stars.component';
 
 @Component({
@@ -18,9 +19,13 @@ export default class ProductDetailComponent {
     newRating : number;
 
     isReviewHidden : boolean = true;
+    isWatching : boolean = false;
+
+    private subscription : Subscription = null;
     
     constructor (route : ActivatedRoute,
-        productService : ProductService) {
+        productService : ProductService,
+        private bidService : BidService) {
 
         let productId : number = parseInt(route.snapshot.params['productId']);
         productService
@@ -59,5 +64,22 @@ export default class ProductDetailComponent {
         this.newRating = 0;
         this.newComment = null;
         this.isReviewHidden = true;
+    }
+
+    toggleWatchProduct() {
+        if (this.subscription !== null) {
+            this.subscription.unsubscribe();
+            this.subscription = null;
+            this.isWatching = false;
+        } else {
+            this.isWatching = true;
+            this.subscription = this.bidService.watchProduct(this.product.id)
+                .subscribe(
+                    products => this.currentBid = products.find(
+                        (p : any) => p.productId === this.product.id).bid,
+                    error => console.log(error)
+                );
+        }
+        
     }
 }
